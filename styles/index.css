@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    background: url(/sistema/images/backgroundEPI2.jpg) no-repeat;
+    background: url(/gestaoEPi/images/backgroundEPI2.jpg) no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     color: #FFFFFF;
