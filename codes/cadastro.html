@@ -5,30 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área de Login</title>
-    <link rel="stylesheet" href="styles/index.css" type="text/css" />
+    <title>Área de Cadastro</title>
+    <link rel="stylesheet" href="/gestaoEPI/styles/index.css" type="text/css" />
 </head>
 
 <body>
 
     <div class="mid">
-        <h4>Login do Funcionário</h4>
+        <h4>Cadastro do Funcionário</h4>
         <form action="acessar.php" method="POST" name="form">
 
+            <div class="field">
+                <input type="text" name="nome" placeholder="Digite seu Nome">
+                <label for="login">Nome do Funcionário:</label>
+            </div>
             <div class="field">
                 <input type="text" name="login" placeholder="Digite sua CA">
                 <label for="login">CA do Funcionário:</label>
             </div>
+
+            <div class="field">
+                <input type="email" name="email" placeholder="funcionario@volkswagen.com.br">
+                <label for="login">E-mail:</label>
+            </div>
+
             <div class="field">
                 <input type="password" name="senha" placeholder="Digite sua senha">
                 <label for="senha">Senha:</label>
             </div>
 
             <div class="center">
-                <input class="button" type="submit" value="Logar">
+                <input class="button" type="submit" value="Cadastrar-se">
             </div>
             <div class="center">
-                <input class="button" type="button" value="Cadastrar" onclick="window.location.href='cadastro.html'">
+                <input class="button" type="button" value="Voltar" onclick="window.location.href='index.html'">
             </div>
         </form>
     </div>

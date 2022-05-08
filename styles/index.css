@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    background: url(/gestaoEPi/images/backgroundEPI2.jpg) no-repeat;
+    background: url(/gestaoEPI/images/backgroundEPI2.jpg) no-repeat;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     color: #FFFFFF;
@@ -19,7 +19,7 @@ h4 {
     text-align: center;
     margin: 20px;
     margin-bottom: 50px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .mid {
