@@ -37,14 +37,14 @@ h2 {
 
 .midcadastro {
     width: 400px;
-    height: 675px;
+    height: 750px;
     border-radius: 8%;
     background-color: #0e3553;
     padding: 50px 50px;
 }
 
 .efeito-vidro {
-    background: rgba(255, 255, 255, 0.100);
+    background: rgba(14, 53, 83, 0.767);
     box-shadow: 0 5px 32px 0 rgb(0, 0, 0, 0.60);
     backdrop-filter: blur( 10.5px );
     -webkit-backdrop-filter: blur( 10.5px );
