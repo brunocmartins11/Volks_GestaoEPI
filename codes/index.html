@@ -13,17 +13,17 @@
 <body>
 
     <div class="midlogin efeito-vidro">
-        <h1>LOGIN DO FUNCIONÁRIO</h1>
+        <h1>LOGIN DO EMPREGADO</h1>
         <br>
         <br>
         <form action="acessar.php" method="POST" name="form">
 
             <div class="field">
-                <input type="text" name="login" placeholder="Digite sua CA">
-                <label for="login">CA do Funcionário:</label>
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="login" placeholder="Digite seu número" required>
+                <label for="login">Número do Empregado:</label>
             </div>
             <div class="field">
-                <input type="password" name="senha" placeholder="Digite sua senha">
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <label for="senha">Senha:</label>
             </div>
 
