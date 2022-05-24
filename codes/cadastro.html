@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Cadastro</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/index.css" type="text/css" />
+</head>
+
+<body>
+
+    <div class="midcadastro efeito-vidro">
+        <h1>CADASTRO DO EMPREGADO</h1>
+        <br>
+        <br>
+        <form action="acessar.php" method="POST" name="form">
+
+            <div class="field">
+                <input type="text" name="nome" placeholder="Digite seu Nome" required>
+                <label for="login">Nome do Empregado:</label>
+            </div>
+            <div class="field">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="login" placeholder="Digite seu número" required>
+                <label for="login">Número do Empregado:</label>
+            </div>
+            
+            <div class="field">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="grupo" placeholder="Digite seu GHE" required>
+                <label for="login">Número do GHE:</label>
+            </div>
+
+            <div class="field">
+                <input type="email" name="email" placeholder="empregado@volkswagen.com.br" required>
+                <label for="login">E-mail:</label>
+            </div>
+
+            <div class="center">
+                <center><input class="button efeito" type="submit" value="Cadastrar-se"></center>
+            </div>
+            <div class="center">
+                <input class="button efeito" type="button" value="Voltar" onclick="window.location.href='index.html'">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
