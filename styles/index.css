@@ -37,7 +37,7 @@ h2 {
 
 .midcadastro {
     width: 400px;
-    height: 750px;
+    height: 670px;
     border-radius: 8%;
     background-color: #0e3553;
     padding: 50px 50px;
@@ -62,6 +62,7 @@ input {
     border-bottom: 1px solid #FFFFFF;
     transition: .25s ease-in-out;
 }
+
 
 .field {
     position: relative;
