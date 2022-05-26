@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background: url(/images/EPI2.jpg) no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Helvetica;
+}
+
+h2 {
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-family: Helvetica;
+    font-style: bold;
+}
+
+.midlogin {
+    width: 400px;
+    height: 500px;
+    border-radius: 10%;
+    background-color: #0e3553;
+    padding: 50px 50px;
+    
+}
+
+.midcadastro {
+    width: 400px;
+    height: 670px;
+    border-radius: 8%;
+    background-color: #0e3553;
+    padding: 50px 50px;
+}
+
+.efeito-vidro {
+    background: rgba(14, 53, 83, 0.767);
+    box-shadow: 0 5px 32px 0 rgb(0, 0, 0, 0.60);
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 20px;
+    border: 1px solid rgba(98, 98, 98, 0.18);
+}
+
+input {
+    width: 300px;
+    height: 35px;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #FFFFFF;
+    transition: .25s ease-in-out;
+}
+
+
+.field {
+    position: relative;
+    margin-bottom: 50px;
+    font-family: Helvetica;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(10px);
+    transition: .25s ease-in-out;
+}
+
+input:focus+label {
+    transform: translateY(-14px) scale(.8);
+    font-weight: bold;
+}
+
+input:not(:placeholder-shown)+label {
+    transform: translateY(-14px) scale(.8);
+    font-weight: bold;
+}
+
+input::placeholder {
+    color: transparent;
+}
+
+.button {
+    padding: 15px 0px 30px;
+    border: 2.25px solid #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 600ms ease;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-weight: bold;
+    align-self: center;
+}
+
+.efeito {
+    background: #0e355300;
+}
+
+.efeito:hover {
+    background: rgba(255, 255, 255, 100);
+    color: #000000;
+}

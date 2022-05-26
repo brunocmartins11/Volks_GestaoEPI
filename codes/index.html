@@ -5,40 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área de Login</title>
+    <title>Gestão - EPI's</title>
+    <link rel="stylesheet" href="/styles/index.css" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/styles/index.css" type="text/css" />
-    <script defer src="script.js"></script>
 </head>
 
 <body>
-    <div id = 'error'></div>
-    <div class="midlogin efeito-vidro">
-        <h1>LOGIN DO EMPREGADO</h1>
-        <br>
-        <br>
-        <form id="form" method="get" name="form">
+    <div class="wrapper">
+        <nav class="navbar">
+            <img class="logo" src="/images/logoVolksW.png" onclick="window.location.href='index.html'">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="center">
+            <h1>Gestão de Entregas de EPI's</h1>
+            <h2>Te Auxiliando com a Segurança dos Encarregados</h2>
+            <div class="buttons">
+                <button onclick="window.location.href='login.html'">Login</button>
+                <button class=" btn" onclick="window.location.href='cadastro.html'">Cadastrar-se</button>
+            </div>
 
-            <div class="field">
-                <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="login" placeholder="Digite sua CA" tabindex="1" required>
-                <label for="login">Número do Empregado:</label>
-            </div>
-            
-            <div class="field">
-                <input type="password" name="senha" placeholder="Digite sua senha" tabindex="2" required>
+        </div>
 
-                <label for="senha">Senha:</label>
-            </div>
-
-            <div class="center">
-                <input class="button efeito" type="submit" value="Logar">
-            </div>
-            <div class="center">
-                <input class="button efeito" type="button" value="Cadastrar" onclick="window.location.href='cadastro.html'">
-            </div>
-        </form>
     </div>
-
 </body>
 
 </html>
