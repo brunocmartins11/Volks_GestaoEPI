@@ -28,7 +28,7 @@ h2 {
 
 .midlogin {
     width: 400px;
-    height: 500px;
+    height: 530px;
     border-radius: 10%;
     background-color: #0e3553;
     padding: 50px 50px;
@@ -37,7 +37,7 @@ h2 {
 
 .midcadastro {
     width: 400px;
-    height: 670px;
+    height: 700px;
     border-radius: 8%;
     background-color: #0e3553;
     padding: 50px 50px;
@@ -89,7 +89,7 @@ input:not(:placeholder-shown)+label {
 }
 
 input::placeholder {
-    color: transparent;
+    color: #ffffff00;
 }
 
 .button {
@@ -114,4 +114,11 @@ input::placeholder {
 .efeito:hover {
     background: rgba(255, 255, 255, 100);
     color: #000000;
+}
+p{
+    margin-top: 10px;
+}
+a{
+    text-decoration: none;
+    color: rgb(117, 131, 255);
 }
