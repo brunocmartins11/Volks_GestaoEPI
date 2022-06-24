@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/login.css" type="text/css" />
+</head>
+
+<body>
+
+<center>
+    <div class="midcadastro efeito-vidro">
+        <h1>CADASTROS</h1>
+        <br>
+        <br>
+        <form action="acessar.php" method="POST" name="form">
+
+            <div class="tabset">
+                <!-- Tab 1 -->
+                <input type="radio" name="tabset" id="tab2" aria-controls="gestor" checked>
+                <label for="tab2">Gestor</label>
+                
+                <!-- Tab 2 -->
+                <input type="radio" name="tabset" id="tab1" aria-controls="seguranca" >
+                <label for="tab1">Segurança do Trabalho</label>
+                <!-- Tab 3 -->
+                <input type="radio" name="tabset" id="tab3" aria-controls="fornecedor">
+                <label for="tab3">Fornecedor</label>
+                
+                <div class="tab-panels">
+                  <section id="seguranca" class="tab-panel">
+
+                    <div class="field">
+                        <input type="text" name="nome_gestor" placeholder="Digite seu Nome" required>
+                        <label class="item"  for="login">Nome do Gestor: </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="login_gestor" placeholder="Digite seu número" required>
+                        <label class="item" for="login">Número do Empregado (Gestor):</label>
+                    </div>
+        
+                    <div class="field">
+                        <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="grupo_gestor" placeholder="Digite seu GHE" required>
+                        <label class="item"  for="login">Número do GHE:</label>
+                    </div>
+        
+                    <div class="field">
+                        <input type="email" name="email_gestor" placeholder="empregado@volkswagen.com.br" required>
+                        <label class="item" for="login">E-mail:</label>
+                    </div>
+        
+                    <div class="center">
+                        <center><input class="button efeito" type="submit" value="Cadastrar-se"></center>
+                    </div>
+                    <div class="center">
+                        <input class="button efeito" type="button" value="Início" onclick="window.location.href='index.html'">
+                    </div>
+                    <div class="center">
+                        <p>Já possui um cadastro? <a href="login.html">Faça Login.</a></p>
+                    </div>
+
+                </section>
+                  <section id="gestor" class="tab-panel">
+
+                        <div class="field">
+
+                            <input type="text" name="nome_seguranca" placeholder="Digite seu Nome" required>
+                            <label class="item"  for="login">Nome do Técnico: </label>
+                        </div>
+                        <div class="field">
+                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="login_seguranca" placeholder="Digite seu número" required>
+                            <label class="item" for="login">Número do Empregado (Técnico):</label>
+                        </div>
+            
+                        <div class="field">
+                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="grupo_seguranca" placeholder="Digite seu GHE" required>
+                            <label class="item"  for="login">Número do GHE:</label>
+                        </div>
+            
+                        <div class="field">
+                            <input type="email" name="email_seguranca" placeholder="empregado@volkswagen.com.br" required>
+                            <label class="item" for="login">E-mail:</label>
+                        </div>
+            
+                        <div class="center">
+                            <center><input class="button efeito" type="submit" value="Cadastrar-se"></center>
+                        </div>
+                        <div class="center">
+                            <input class="button efeito" type="button" value="Início" onclick="window.location.href='index.html'">
+                        </div>
+                        <div class="center">
+                            <p>Já possui um cadastro? <a href="login.html">Faça Login.</a></p>
+                        </div>
+    
+                    </section>
+                  </section>
+                  <section id="fornecedor" class="tab-panel">
+                    
+                    <div class="field">
+                        <input type="text" name="nome_fornecedor" placeholder="Digite seu Nome" required>
+                        <label class="item"  for="login">Nome do Fornecedor: </label>
+                    </div>
+                    <div class="field">
+                        <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="login_fornecedor" placeholder="Digite seu número" required>
+                        <label class="item" for="login">Número do Fornecedor:</label>
+                    </div>
+        
+                    <div class="field">
+                        <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="grupo_fornecedor" placeholder="Digite seu GHE" required>
+                        <label class="item"  for="login">Número do GHE:</label>
+                    </div>
+        
+                    <div class="field">
+                        <input type="email" name="email_fornecedor" placeholder="empregado@volkswagen.com.br" required>
+                        <label class="item" for="login">E-mail:</label>
+                    </div>
+        
+                    <div class="center">
+                        <center><input class="button efeito" type="submit" value="Cadastrar-se"></center>
+                    </div>
+                    <div class="center">
+                        <input class="button efeito" type="button" value="Início" onclick="window.location.href='index.html'">
+                    </div>
+                    <div class="center">
+                        <p>Já possui um cadastro? <a href="login.html">Faça Login.</a></p>
+                    </div>
+                    
+                  </section>
+                </div>
+                
+              </div>
+
+
+        </form>
+    </div>
+
+</center>
+
+</body>
+
+</html>

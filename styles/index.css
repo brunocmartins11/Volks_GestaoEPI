@@ -1,116 +1,95 @@
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
 }
 
-body {
-    display: flex;
-    background: url(/images/EPI2.jpg) no-repeat;
+.wrapper {
+    background: url(/images/epi.jpg) no-repeat;
     background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    font-family: Helvetica;
 }
 
-h2 {
-    padding: 10px;
-    text-align: center;
-    margin: 20px;
-    margin-bottom: 50px;
-    font-size: 20px;
-    font-family: Helvetica;
-    font-style: bold;
-}
-
-.midlogin {
-    width: 400px;
-    height: 500px;
-    border-radius: 10%;
-    background-color: #0e3553;
-    padding: 50px 50px;
-    
-}
-
-.midcadastro {
-    width: 400px;
-    height: 750px;
-    border-radius: 8%;
-    background-color: #0e3553;
-    padding: 50px 50px;
-}
-
-.efeito-vidro {
-    background: rgba(14, 53, 83, 0.767);
-    box-shadow: 0 5px 32px 0 rgb(0, 0, 0, 0.60);
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
-    border-radius: 20px;
-    border: 1px solid rgba(98, 98, 98, 0.18);
-}
-
-input {
-    width: 300px;
-    height: 35px;
-    color: #FFFFFF;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #FFFFFF;
-    transition: .25s ease-in-out;
-}
-
-.field {
-    position: relative;
-    margin-bottom: 50px;
-    font-family: Helvetica;
-}
-
-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(10px);
-    transition: .25s ease-in-out;
-}
-
-input:focus+label {
-    transform: translateY(-14px) scale(.8);
-    font-weight: bold;
-}
-
-input:not(:placeholder-shown)+label {
-    transform: translateY(-14px) scale(.8);
-    font-weight: bold;
-}
-
-input::placeholder {
-    color: transparent;
-}
-
-.button {
-    padding: 15px 0px 30px;
-    border: 2.25px solid #FFFFFF;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 100px;
+.logo {
+    width: 50px;
+    height: auto;
+    padding: 20px 100px;
     cursor: pointer;
-    transition: all 600ms ease;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    color: #ffffff;
+}
+
+.navbar {
+    height: 80px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.navbar ul {
+    float: right;
+    margin-right: 20px;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 9px;
+    display: inline-block;
+    line-height: 80px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 13px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.center h1 {
+    color: white;
+    font-size: 65px;
     font-weight: bold;
-    align-self: center;
+    width: 900px;
+    text-align: center;
 }
 
-.efeito {
-    background: #0e355300;
+.center h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    width: 885px;
+    margin-top: 10px;
+    text-align: center;
 }
 
-.efeito:hover {
-    background: rgba(255, 255, 255, 100);
-    color: #000000;
+.center .buttons {
+    margin: 35px 280px;
+}
+
+.buttons button {
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #0d4671;
+    outline: none;
+    border: 1px solid #0b395c;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+}
+
+.buttons .btn {
+    margin-left: 25px;
+}
+
+.buttons button:hover {
+    background: #0b395c;
 }
