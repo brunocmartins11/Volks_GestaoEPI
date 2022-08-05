@@ -11,6 +11,12 @@ a {
   transition: 0.3s;
 }
 
+p {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
 a:hover {
   color: #14639e;
 }
@@ -21,12 +27,17 @@ a:hover {
   letter-spacing: 4px;
 }
 
+.logoVW {
+  width: 50px;
+  height: auto;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-  background: #24252a;
+  background: #1b1b1b;
   height: 8vh;
 }
 
@@ -81,7 +92,7 @@ main {
   border-left: 4px solid transparent;
   transition: all .5s ease;
 }
-a.active,a.hover{
+.sidebar a:hover,a.active{
   border-left: 5px solid #593632;
   color:#14639e;
 
@@ -129,6 +140,12 @@ label #cancel{
   visibility: hidden;
 }
 
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
 @media(max-width: 860px){
   .sidebar{
   height: auto;
@@ -161,3 +178,109 @@ a:hover{
   visibility: visible;
 }
 }
+
+/* Criando as Tabs do Tutorial*/
+/* .label2{
+  
+  background: #14639e;
+  display: grid;
+  place-items: center;
+  transition: all 1s;
+  height: 80vh;
+}
+
+.container {
+  width: 750px;
+  height: 500px;
+  box-shadow: 0px 2px 4px black;
+  background: white;
+  overflow: hidden;
+  z-index: 3;
+}
+.wrapper {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.459);
+  color: rgb(160, 236, 241);
+}
+.nav2{
+  position: absolute;
+  top: 87%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid gainsboro;
+  z-index: 8;
+  background: white;
+  color: rgb(150, 240, 177);
+}
+.nav2 a {
+  padding: 10px;
+  text-decoration: none;
+  color: gray;
+  font-size: 1.4rem;
+}
+.nav2::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 6px;
+  background: rgba(231, 228, 228, 0.801);
+  border-radius: 5px;
+}
+.content {
+  display: flex;
+  width: 750px;
+  height: 100%;
+}
+.item {
+  width: 250px;
+  color: black;
+  background: white;
+  display: flex;
+  row-gap: 25px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link {
+  transition: all 0.3s;
+}
+.tabone {
+  color: rgb(22, 22, 22);
+  transform: scale(1.1);
+  border-bottom: 1px solid black;
+}
+.line {
+  width: 70%;
+  height: 8px;
+  margin-top:5px;
+  background: gainsboro;
+  border-radius: 8px;
+}
+.line2 {
+  width: 50%;
+}
+.item i {
+  font-weight: bolder;
+  font-size: 3rem;
+  color: rgb(12, 12, 12);
+}
+.item1 i {
+  color: rgb(243, 118, 160);
+}
+.item2 i {
+  color: rgb(146, 146, 228);
+}
+.item3 i {
+  color: rgb(245, 233, 67);
+} */
