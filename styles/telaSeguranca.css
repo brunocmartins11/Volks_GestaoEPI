@@ -65,8 +65,8 @@ main {
 
 .sidebar{
   position: fixed;
-  width: 240px;
-  left: -240px;
+  width: 300px;
+  left: -300px;
   height: 100%;
   background: #1e1e1e;
   transition: all .5s ease;
@@ -135,15 +135,25 @@ label #cancel{
 }
 
 #check:checked ~ label #btn{
-  margin-left: 245px;
+  margin-left: 305px;
   opacity: 0;
   visibility: hidden;
 }
 
 #check:checked ~ label #cancel{
-  margin-left: 245px;
+  margin-left: 305px;
   opacity: 1;
   visibility: visible;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
 }
 
 @media(max-width: 860px){
