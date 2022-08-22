@@ -37,7 +37,7 @@
     <header>
         <nav class="navbar navbar-custom " style="height: 75px; ">
             <a><img class="logoVW" src="/images/logoVolksW.png"></a>
-            <p class="logo">Tela de Gestão -- Segurança do Trabalho</p>
+            <p class="logo">Tela de Acesso -- Gestor</p>
             <ul class="NavBarLinks">
                 <li><a href="/"><img class="notificacao" src="/images/sino.png"></a></li>
                 <li><a href="/">Sair</a></li>
@@ -53,22 +53,17 @@
     <div class="sidebar" style="margin-top: -24px;">
         <header>Menu</header>
         <a href="telaSeguranca_EPI.html" class="active">
-            <i class="fa fa-helmet-safety"></i>
-            <span>Cadastro de EPi's</span>
+            <i class="fa fa-users"></i>
+            <span>Acesso às equipes</span>
         </a>
         <a href="telaSeguranca_GHE.html">
-            <i class="fa fa-users"></i>
-            <span>Cadastro de GHE</span>
-        </a>
-        <a href="telaSeguranca_Mensagem.html">
-            <i class="fa fa-message"></i>
-            <span>Mensagem</span>
+            <i class="fa fa-search"></i>
+            <span>Pesquisar relatório</span>
         </a>
     </div>
 
     <div>
-        <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-helmet-safety"><B> CADASTRO
-                    DE EPI´S</B></i></h2>
+        <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-users"><B> EQUIPES</B></i></h2>
     </div>
 
     <center>
@@ -79,14 +74,14 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Código de Cadastro</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp"
-                                    placeholder="Insira o Código de Cadastro">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"><i
-                                            class="fa fa-search"></i></button>
-                                </div>
-                            </div>
+                            <div class="input-group">
+                                <input class="form-control border-end-0 border rounded-pill" type="search" id="example-search-input">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary bg-white border-left-0 border rounded-pill ms-n5" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                
+                         </div>
                         </div>
                     </div>
 
