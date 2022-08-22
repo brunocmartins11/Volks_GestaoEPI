@@ -21,6 +21,12 @@ a:hover {
   color: #14639e;
 }
 
+
+button:hover{
+  color: #14639e;
+  cursor: pointer;
+}
+
 .logo{
   font-size: 20px;
   text-transform: uppercase;
