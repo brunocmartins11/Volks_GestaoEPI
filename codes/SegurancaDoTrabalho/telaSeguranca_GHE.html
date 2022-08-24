@@ -14,18 +14,11 @@
 
 
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
     <!-- SCRIPTS -->
@@ -35,12 +28,14 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-custom " style="height: 100px;">
+        <nav class="navbar navbar-custom " style="height: 75px;">
             <a><img class="logoVW" src="/images/logoVolksW.png"></a>
-            <p class="logo">Tela de Gestão -- Segurança do Trabalho</p>
+            <p class="logo centro">Tela de Gestão -- Segurança do Trabalho</p>
             <ul class="NavBarLinks">
-                <li><a href="/"><img class="notificacao" src="/images/sino.png"></a></li>
-                <li><a href="/">Sair</a></li>
+                <li>
+                    <a href="/" class="centro"><img class="notificacao" src="/images/sino.png"></a>
+                </li>
+                <li><a href="/" class="centro cor">Sair</a></li>
             </ul>
         </nav>
 
@@ -79,32 +74,28 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Empresa:</label>
-                            <input type="text" class="form-control" id="Nome_Empresa" aria-describedby="emailHelp"
-                            placeholder="Insira a Empresa">
+                            <input type="text" class="form-control" id="Nome_Empresa" aria-describedby="emailHelp" placeholder="Insira a Empresa">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Departamento:</label>
-                            <input type="text" class="form-control" id="Nome_Departamento" aria-describedby="emailHelp"
-                                placeholder="Insira o Departamento">
+                            <input type="text" class="form-control" id="Nome_Departamento" aria-describedby="emailHelp" placeholder="Insira o Departamento">
                         </div>
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Nome GHE:</label>
-                            <input type="text" class="form-control" id="Nome_GHE" aria-describedby="emailHelp"
-                                placeholder="Insira o Nome do GHE">
+                            <input type="text" class="form-control" id="Nome_GHE" aria-describedby="emailHelp" placeholder="Insira o Nome do GHE">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Código GHE:</label>
-                            <input type="number" class="form-control" id="Codigo_GHE" aria-describedby="emailHelp"
-                                placeholder="Insira o Código do GHE">
+                            <input type="number" class="form-control" id="Codigo_GHE" aria-describedby="emailHelp" placeholder="Insira o Código do GHE">
                         </div>
                     </div>
-                        <center>
-                        <div> 
-                            <button type="submit" class="btn btn-outline-primary" style="border-radius: 15px;";">Confirmar</button>
+                    <center>
+                        <div>
+                            <button type="submit" class="btn btn-outline-primary" style="border-radius: 15px;" ; ">Confirmar</button>
                         </div>
                     </center> 
                     </div>
@@ -113,26 +104,26 @@
         </div>
     </center>
     
-    <a><button class="floating-right-bottom-btn" data-toggle="modal" data-target="#exampleModalCenter">
-        <i class="fa fa-circle-question meu-float"></i>
+    <a><button class="floating-right-bottom-btn " data-toggle="modal " data-target="#exampleModalCenter ">
+        <i class="fa fa-circle-question meu-float "></i>
     </button></a>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Tutorial</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+<div class="modal fade " id="exampleModalCenter " tabindex="-1 " role="dialog "
+    aria-labelledby="exampleModalCenterTitle " aria-hidden="true ">
+    <div class="modal-dialog modal-dialog-centered " role="document ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h5 class="modal-title " id="exampleModalLongTitle ">Tutorial</h5>
+                <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+                    <span aria-hidden="true ">&times;</span>
                 </button>
 
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
                 Teste
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-secondary " data-dismiss="modal ">Close</button>
             </div>
         </div>
     </div>
