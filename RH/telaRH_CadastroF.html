@@ -30,7 +30,7 @@
     <header>
         <nav class="navbar navbar-custom" style="height: 75px; ">
             <a><img class="logoVW" src="/images/logoVolksW.png"></a>
-            <p class="logo centro">Tela de Gestão -- Segurança do Trabalho</p>
+            <p class="logo centro">Tela de Acesso -- Recursos Humanos</p>
             <ul class="NavBarLinks">
                 <li>
                     <a href="/" class="centro"><img class="notificacao" src="/images/sino.png"></a>
@@ -47,9 +47,9 @@
     </label>
     <div class="sidebar" style="margin-top: -24px;">
         <header>Menu</header>
-        <a href="telaSeguranca_EPI.html" class="active">
-            <i class="fa fa-helmet-safety"></i>
-            <span>Cadastro de EPi's</span>
+        <a href="telaRH_CadastroF.html" class="active">
+            <i class="fa fa-id-card"></i>
+            <span>Cadastrar Funcionário</span>
         </a>
         <a href="telaSeguranca_GHE.html">
             <i class="fa fa-users"></i>
@@ -62,8 +62,8 @@
     </div>
 
     <div>
-        <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-helmet-safety"><B> CADASTRO
-                    DE EPI´S</B></i></h2>
+        <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-id-card"><B> CADASTRO
+                    DE FUNCIONÁRIOS</B></i></h2>
     </div>
 
     <center>
@@ -71,16 +71,35 @@
         <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
             <div>
                 <form>
+
+                    <label><h3 style="border: 1px solid black; border-radius:30px; padding: 10px;"><b>DADOS PESSOAIS</b></h3></label>
+
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-12 flex-column d-flex">
-                            <label>Código de Cadastro</label>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Código de Cadastro">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"><i
-                                            class="fa fa-search"></i></button>
-                                </div>
-                            </div>
+                        <div class="form-group col-sm-9 flex-column d-flex">
+                            <label>Nome do empregado:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o nome do EPI">
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>Número do registro:</label>
+                            <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Nº de Registro">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left text-left">
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>CPF</label>
+                            <input type="number" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o CPF">
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>RG</label>
+                            <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o RG">
+                        </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>Foto do funcionário:</label>
+                            <input type="file" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Número de CA">
                         </div>
                     </div>
 
@@ -94,20 +113,6 @@
                             <option>Proteção Facial</option>
                         </select>
                     </div>
-
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex">
-                            <label>Nome do EPI:</label>
-                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o nome do EPI">
-                        </div>
-
-                        <div class="form-group col-sm-6 flex-column d-flex">
-                            <label>Código do CA:</label>
-                            <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Número de CA">
-                        </div>
-                    </div>
-
-
 
 
                     <div class="container" style="border: 1px solid silver; width: 60%; border-radius: 10px;">
@@ -172,30 +177,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <a href="#" class="floating-right-bottom-btn">
-        <i class="fa fa-circle-question meu-float"></i>
-    </a> -->
-
-    <!-- <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
-        <form>
-            <div class="row mb-3">
-        <div class="col-6">
-          <label for="Nome_do_EPI">Nome do EPI</label>
-          <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o nome do EPI">
-        </div>
-        <div class="row mb-3">
-          <label for="Tipo_do_EPI">Tipo do EPI</label>
-          <input type="text" class="form-control" id="Tipo_do_EPI" placeholder="Senha">
-        </div>
-            <div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
-    </div> -->
 
 </body>
 
