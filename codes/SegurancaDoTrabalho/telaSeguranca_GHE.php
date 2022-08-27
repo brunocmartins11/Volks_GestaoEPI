@@ -36,6 +36,7 @@
         exit;
     }
 
+
     ?>
     <header>
         <nav class="navbar navbar-custom " style="height: 75px;">
@@ -80,64 +81,138 @@
 
         <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
             <div>
-                <form>
+                <form action="telaSeguranca_GHE.php" method="post">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Empresa:</label>
-                            <input type="text" class="form-control" id="Nome_Empresa" aria-describedby="emailHelp" placeholder="Insira a Empresa">
+                            <input type="text" class="form-control" id="Nome_Empresa" name="Nome_Empresa" aria-describedby="emailHelp" placeholder="Insira a Empresa">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Departamento:</label>
-                            <input type="text" class="form-control" id="Nome_Departamento" aria-describedby="emailHelp" placeholder="Insira o Departamento">
+                            <input type="text" class="form-control" id="Nome_Departamento" name="Nome_Departamento" aria-describedby="emailHelp" placeholder="Insira o Departamento">
                         </div>
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Nome GHE:</label>
-                            <input type="text" class="form-control" id="Nome_GHE" aria-describedby="emailHelp" placeholder="Insira o Nome do GHE">
+                            <input type="text" class="form-control" id="Nome_GHE" name="Nome_GHE" aria-describedby="emailHelp" placeholder="Insira o Nome do GHE">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Código GHE:</label>
-                            <input type="number" class="form-control" id="Codigo_GHE" aria-describedby="emailHelp" placeholder="Insira o Código do GHE">
+                            <input type="number" class="form-control" id="Codigo_GHE" name="Codigo_GHE" aria-describedby="emailHelp" placeholder="Insira o Código do GHE">
                         </div>
                     </div>
                     <center>
                         <div>
-                            <button type="submit" class="btn btn-outline-primary" style="border-radius: 15px;">Confirmar</button>
+                            <button type="submit" id="confirmar" name="confirmar" class="btn btn-outline-primary" style="border-radius: 15px;">Confirmar</button>
                         </div>
-                    </center> 
-                    </div>
-                </form>
+                    </center>
             </div>
+            </form>
+        </div>
         </div>
     </center>
-    
+
     <a><button class=" floating-right-bottom-btn " data-toggle=" modal " data-target=" #exampleModalCenter ">
-        <i class=" fa fa-circle-question meu-float "></i>
-    </button></a>
+            <i class=" fa fa-circle-question meu-float "></i>
+        </button></a>
 
-<div class=" modal fade " id=" exampleModalCenter " tabindex=" -1 " role=" dialog "
-    aria-labelledby=" exampleModalCenterTitle " aria-hidden=" true ">
-    <div class=" modal-dialog modal-dialog-centered " role=" document ">
-        <div class=" modal-content ">
-            <div class=" modal-header ">
-                <h5 class=" modal-title " id=" exampleModalLongTitle ">Tutorial</h5>
-                <button type=" button " class=" close " data-dismiss=" modal " aria-label=" Close ">
-                    <span aria-hidden=" true ">&times;</span>
-                </button>
+    <div class=" modal fade " id=" exampleModalCenter " tabindex=" -1 " role=" dialog " aria-labelledby=" exampleModalCenterTitle " aria-hidden=" true ">
+        <div class=" modal-dialog modal-dialog-centered " role=" document ">
+            <div class=" modal-content ">
+                <div class=" modal-header ">
+                    <h5 class=" modal-title " id=" exampleModalLongTitle ">Tutorial</h5>
+                    <button type=" button " class=" close " data-dismiss=" modal " aria-label=" Close ">
+                        <span aria-hidden=" true ">&times;</span>
+                    </button>
 
-            </div>
-            <div class=" modal-body ">
-                Teste
-            </div>
-            <div class=" modal-footer ">
-                <button type=" button " class=" btn btn-secondary " data-dismiss=" modal ">Close</button>
+                </div>
+                <div class=" modal-body ">
+                    Teste
+                </div>
+                <div class=" modal-footer ">
+                    <button type=" button " class=" btn btn-secondary " data-dismiss=" modal ">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <?php
+    error_reporting(0);
+
+
+    $servidor = "localhost";
+    $usuario = "root";
+    $senha = "";
+    $dbname = "gestaoepi_bd";
+    //Criar a conexao
+    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+    if (!$conn) {
+        die("Falha na conexao: " . mysqli_connect_error());
+    } else {
+        //echo "Conexao realizada com sucesso";
+    }
+
+    $enviar = $_POST['confirmar'];
+
+    if (isset($enviar)) {
+
+
+
+        $empresa = $_POST['Nome_Empresa'];
+        $departamento = $_POST['Nome_Departamento'];
+        $codGHE = $_POST['Codigo_GHE'];
+        $nomeGHE = $_POST['Nome_GHE'];
+
+
+
+        $sql = "INSERT INTO `ghe`(`idGHE`, `empresa`, `departamento`, `codGHE`, `nomeGHE`) VALUES (null, '$empresa', '$departamento', '$codGHE', '$nomeGHE')";
+
+        if ($empresa == null ||  $departamento == null || $nomeGHE == null || $codGHE == null) {
+            echo "<script>
+      alert('Preencha os campos restantes.');
+      </script>";
+        } else {
+
+
+            $comparar = "SELECT `codGHE`, `nomeGHE` FROM `ghe` WHERE (`codGHE` = '" . $codGHE . "') or (`nomeGHE` = '" . $nomeGHE . "')";
+
+            $result = mysqli_query($conn, $comparar);
+
+            if (mysqli_num_rows($result) >= 1) {
+
+                echo "<script>
+        alert('Este GHE já existe!');
+        </script>";
+                mysqli_error($conn);
+            } else {
+                if (mysqli_query($conn, $sql)) {
+                    echo "<script>
+            alert('GHE Cadastrado com Sucesso!');
+            </script>";
+                    mysqli_free_result($result);
+                    
+                } else {
+                    echo "<script>
+            alert('GHE não foi Cadastrado');
+            </script>";
+                    mysqli_error($conn);
+                }
+            }
+        }
+        unset($empresa);
+    unset($departamento);
+    unset($codGHE);
+    unset($nomeGHE);
+    }
+    
+
+    ?>
+
 </body>
+
 
 </html>
