@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    background: url(/images/EPI2.jpg) no-repeat;
+    background: url("EPI2.jpg") no-repeat;
     background-size: cover;
     color: #FFFFFF;
     justify-content: center;

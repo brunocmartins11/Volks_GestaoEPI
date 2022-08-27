@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-    background: url(/images/epi.jpg) no-repeat;
+    background-image: url("epi.jpg") no-repeat;
     background-size: cover;
     height: 100vh;
 }
