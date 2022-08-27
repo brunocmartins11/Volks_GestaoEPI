@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/93b1b18bdc.js" crossorigin="anonymous"></script>
 
-
+    
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -28,7 +28,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-custom" style="height: 75px; ">
+        <nav class="navbar navbar-custom" style="height: 75px;" id="navbar_principal">
             <a><img class="logoVW" src="/images/logoVolksW.png"></a>
             <p class="logo centro">Tela de Acesso -- Recursos Humanos</p>
             <ul class="NavBarLinks">
@@ -72,7 +72,7 @@
             <div>
                 <form>
 
-                    <label><h3 style="border: 1px solid black; border-radius:30px; padding: 10px;"><b>DADOS PESSOAIS</b></h3></label>
+                    <label><h3 style="border: 1px solid black; border-radius:30px; padding: 5px;"><b>DADOS PESSOAIS</b></h3></label>
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-9 flex-column d-flex">
@@ -96,11 +96,68 @@
                             <label>RG</label>
                             <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o RG">
                         </div>
-
-                        <div class="form-group col-sm-6 flex-column d-flex">
+                    </div>
+                    <div class="row justify-content-left text-left">
+                        <!-- <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Foto do funcionário:</label>
                             <input type="file" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Número de CA">
+                        </div> -->
+
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>Endereço:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Endereço">
                         </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>Cidade:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira a Cidade">
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>Bairro:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Bairro">
+                        </div>
+
+                        <div class="form-group col-sm-3 flex-column d-flex">
+                            <label>Complemento:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Complemento">
+                        </div>
+                    </div>
+
+                    <label style="padding-top: 20px;"><h3 style="border: 1px solid black; border-radius:30px; padding: 5px;"><b>DADOS PROFISSIONAIS</b></h3></label>
+
+                    <div class="row justify-content-left text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>Código de Departamento:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Departamento">
+                        </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>Código da Empresa:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira a Empresa">
+                        </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>Código de Cargo:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Código de Cargo">
+                        </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>GHE:</label>
+                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o GHE">
+                        </div>
+                        
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>Descrição do Cargo:</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        <!-- <div class="form-group col-sm-6 flex-column d-flex">
+                            <label>Assinatura:</label>
+                            <input type="file" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Número de CA">
+                        </div> -->
+                        
+                    </div>
                     </div>
 
                     </div>
