@@ -63,10 +63,6 @@
             <i class="fa fa-helmet-safety"></i>
             <span>Cadastro de EPi's</span>
         </a>
-        <a href="telaSeguranca_GHE.php">
-            <i class="fa fa-users"></i>
-            <span>Cadastro de GHE</span>
-        </a>
         <a href="telaSeguranca_Mensagem.php">
             <i class="fa fa-message"></i>
             <span>Mensagem</span>

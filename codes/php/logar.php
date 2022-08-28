@@ -43,6 +43,10 @@ include "conexao.php";
     // Redireciona o visitante de volta pro login
     header("Location: http://localhost/gestaoepi/codes/Logistica/telaLogistica.php");
 }
+elseif (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'] == 4)) {
+    // Redireciona o visitante de volta pro login
+    header("Location: http://localhost/gestaoepi/codes/RH/telaRH.php");
+}
 else{
     session_destroy();
     header("Location: http://localhost/gestaoepi/codes/login.html"); exit;
