@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="login.css" type="text/css" />
+    <link rel="stylesheet" href="styles/login.css" type="text/css" />
     <script defer src="script.js"></script>
 </head>
 
-<body style="background-image: url(http://localhost/gestaoepi/images/EPI2.jpg);">
+<body style="background-image: url(images/EPI2.jpg);">
     <div id='error'></div>
     <div class="midlogin efeito-vidro">
         <center>
@@ -19,7 +19,7 @@
         </center>
         <br>
         <br>
-        <form id="form" method="post" name="form" action="http://localhost/gestaoepi/codes/php/logar.php">
+        <form id="form" method="post" name="form" action="gestaoepi/codes/php/logar.php">
 
             <div class="field">
                 <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="login" id="login" placeholder="Digite sua CA" tabindex="1" required>
