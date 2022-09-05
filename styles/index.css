@@ -72,7 +72,7 @@
     margin: 35px 280px;
 }
 
-.buttons button {
+.buttons .btn {
     height: 50px;
     width: 150px;
     font-size: 18px;
@@ -84,9 +84,6 @@
     cursor: pointer;
     border-radius: 25px;
     transition: .5s;
-}
-
-.buttons .btn {
     margin-left: 25px;
 }
 

@@ -85,7 +85,7 @@
 
         <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
             <div>
-                <form action="telaSeguranca_GHE.php" method="post">
+                <form action="telaRH_GHE.php" method="post">
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
@@ -153,13 +153,65 @@
                         </div>
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Nome GHE:</label>
-                            <input type="text" class="form-control" id="Nome_GHE" name="Nome_GHE" aria-describedby="emailHelp" placeholder="Insira o Nome do GHE">
+                            <input class="form-control"  list="Nome_GHE" name="Nome_GHE" aria-describedby="emailHelp" placeholder="Insira o Nome do GHE"/>
+                            <datalist id="Nome_GHE" name="Nome_GHE" >
+                                <?php
+                                $servidor = "localhost";
+                                $usuario = "root";
+                                $senha = "";
+                                $dbname = "gestaoepi_bd";
+                                //Criar a conexao
+                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                if (!$conn) {
+                                    die("<script>
+                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</script>");
+                                } else {
+                                    //echo "Conexao realizada com sucesso";
+                                }
+                                
+                                    $selectEmpresas = "select * from `ghe`";
+                                    $result = mysqli_query($conn, $selectEmpresas);
+
+                                    while($rowEmpresas = mysqli_fetch_assoc($result)){ ?>
+                                    <option value="<?php echo $rowEmpresas['nomeGHE']; ?>">
+                                    </option><?php
+
+                                    }
+                                    ?>
+                            </datalist>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Código GHE:</label>
-                            <input type="number" class="form-control" id="Codigo_GHE" name="Codigo_GHE" aria-describedby="emailHelp" placeholder="Insira o Código do GHE">
+                            <input class="form-control"  list="Codigo_GHE" name="Codigo_GHE" aria-describedby="emailHelp" placeholder="Insira o Código do GHE"/>
+                            <datalist id="Codigo_GHE" name="Codigo_GHE" >
+                                <?php
+                                $servidor = "localhost";
+                                $usuario = "root";
+                                $senha = "";
+                                $dbname = "gestaoepi_bd";
+                                //Criar a conexao
+                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                if (!$conn) {
+                                    die("<script>
+                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</script>");
+                                } else {
+                                    //echo "Conexao realizada com sucesso";
+                                }
+                                
+                                    $selectEmpresas = "select * from `ghe`";
+                                    $result = mysqli_query($conn, $selectEmpresas);
+
+                                    while($rowEmpresas = mysqli_fetch_assoc($result)){ ?>
+                                    <option value="<?php echo $rowEmpresas['codGHE']; ?>"><?php echo $rowEmpresas['nomeGHE']; ?>
+                                    </option><?php
+
+                                    }
+                                    ?>
+                            </datalist>
                         </div>
                     </div>
                     <center>

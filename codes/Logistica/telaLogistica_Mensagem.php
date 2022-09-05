@@ -26,10 +26,10 @@
 <body>
     <header>
     <nav>
-        <a><img class="logoVW" src="http://localhost/gestaoepi/images/logoVolksW.png"></a>
+        <a><img class="logoVW" src="/images/logoVolksW.png"></a>
         <p class="logo">Tela de Acesso -- Logística</p>
         <ul class="NavBarLinks">
-            <li><a href="/"><img class="notificacao" src="http://localhost/gestaoepi/images/sino.png"></a></li>
+            <li><a href="/"><img class="notificacao" src="/images/sino.png"></a></li>
             <li><a href="http://localhost/gestaoepi/codes/php/logout.php">Sair</a></li>
         </ul>
     </nav>
