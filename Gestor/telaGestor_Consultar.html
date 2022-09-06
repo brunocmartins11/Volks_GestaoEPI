@@ -62,21 +62,54 @@
     </div>
 
     <div>
-        <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-users"><B> FUNCIONÁRIOS</B></i></h2>
+        <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-search"><B> CONSULTAR RELATÓRIOS</B></i></h2>
     </div>
 
     <center>
 
         <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
-
-            <div class="form-group row col-8">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Pesquise o funcionário">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button"><i
-                                        class="fa fa-search"></i></button>
+            <form>
+            <label>Nome ou número do empregado:</label>
+            <div class="row justify-content-center text-left">
+                <div class="form-group col-8 flex-column d-flex">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Pesquisar">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <label>Departamento do empregado:</label>
+            <div class="row justify-content-center text-left">
+                <div class="form-group col-8 flex-column d-flex">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Pesquisar">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <label>Período do funcionário:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Matinal</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Vespertino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Noturno</label>
+              </div>
+            </div><br>
 
                 <table class="table">
                     <thead class="thead-dark">
@@ -90,6 +123,14 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                         </tr>
+
+                        <center>
+                            <div>
+                                <button type="submit" class="btn btn-outline-primary" style="border-radius: 15px; margin-bottom: 25px;">Pesquisar relatório</button>
+                            </div>
+                        </center>
+
+                    </form>
 
                         <a><button class="floating-right-bottom-btn" data-toggle="modal" data-target="#exampleModalCenter">
             <i class="fa fa-circle-question meu-float"></i>
