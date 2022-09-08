@@ -10,7 +10,7 @@ include "conexao.php";
   $senha = $_POST['senha'];
 
   // Validação do usuário/senha digitados
-  $sql = "SELECT `id`, `nivel` FROM `usuarios` WHERE (`usuario` = '". $usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
+  $sql = "SELECT `id`, `nivel`, `codDepartamento` FROM `usuarios` WHERE (`usuario` = '". $usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
   $query = mysqli_query($conn, $sql);
 
 
@@ -26,6 +26,8 @@ include "conexao.php";
       // Salva os dados encontrados na sessão
       $_SESSION['UsuarioID'] = $resultado['id'];
       $_SESSION['UsuarioNivel'] = $resultado['nivel'];
+      $_SESSION['UsuarioDepartamento'] = $resultado['codDepartamento'];
+      
 
   }
 
@@ -33,7 +35,7 @@ include "conexao.php";
 
     
     // Redireciona o visitante de volta pro login
-    header("Location: cadastros.html");
+    header("Location: http://localhost/gestaoepi/codes/Gestor/telaGestor.php");
 
 }elseif (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'] == 2)) {
     // Redireciona o visitante de volta pro login

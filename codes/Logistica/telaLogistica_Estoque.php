@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SCRIPTS -->
     <link rel="stylesheet" href="http://localhost/gestaoepi/styles/telaSeguranca.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/93b1b18bdc.js" crossorigin="anonymous"></script>
-    
-    
+
+
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    
+
+
     <!-- SCRIPTS -->
 
     <title>Tela Logistica (EM PROGRESSO)</title>
 </head>
+
 <body>
+    <?php
+
+    session_start();
+
+    if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+        header("Location: http://localhost/gestaoepi/codes/login.html");
+        exit;
+    }
+
+
+    ?>
     <header>
         <nav class="navbar navbar-custom" style="height: 75px; ">
             <a><img class="logoVW" src="http://localhost/gestaoepi/images/logoVolksW.png"></a>
@@ -39,8 +53,8 @@
 
     <input type="checkbox" id="check">
     <label for="check">
-       <i class="fa fa-bars" id="btn"></i>
-       <i class="fa fa-times" id="cancel"></i>
+        <i class="fa fa-bars" id="btn"></i>
+        <i class="fa fa-times" id="cancel"></i>
     </label>
     <div class="sidebar" style="margin-top: -24px;">
         <header>Menu</header>
@@ -49,23 +63,23 @@
             <span>Cadastro de Estoque</span>
         </a>
         <a href="telaLogistica_Busca.php">
-          <i class="fa fa-search"></i>
-          <span>Busca</span>
-      </a>
+            <i class="fa fa-search"></i>
+            <span>Busca</span>
+        </a>
         <a href="telaLogistica_Checagem.php">
-          <i class="fa fa-search"></i>
-          <span>Checagem</span>
-      </a>
-      <a href="telaLogistica_Estoque.php">
-          <i class="fa fa-search"></i>
-          <span>Estoque</span>
-      </a>
+            <i class="fa fa-search"></i>
+            <span>Checagem</span>
+        </a>
+        <a href="telaLogistica_Estoque.php">
+            <i class="fa fa-search"></i>
+            <span>Estoque</span>
+        </a>
         <a href="telaLogistica_Mensagem.php">
-          <i class="fa fa-message"></i>
+            <i class="fa fa-message"></i>
             <span>Mensagem</span>
         </a>
-    </div> 
-    
+    </div>
+
     <div>
         <h2 style="font-family: 'Roboto', sans-serif; text-align: center;"><i class="fa fa-box"><B> CADASTRO
                     DE ESTOQUE</B></i></h2>
@@ -75,16 +89,38 @@
 
         <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
             <div>
-                <form>
+                <form action="telaLogistica_Estoque.php" method="post">
                     <div class="row justify-content-center text-left">
                         <div class="form-group col-8 flex-column d-flex">
-                            <label>Nome do EPI:</label>
+                            <label>Código de Cadastro do EPI:</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Pesquise o EPI ou o Cod que deseja">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"><i
-                                            class="fa fa-search"></i></button>
-                                </div>
+                                <input class="form-control" list="codCadastro" name="codCadastro" aria-describedby="emailHelp" />
+                                <datalist id="codCadastro" name="codCadastro">
+                                    <?php
+                                    $servidor = "localhost";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $dbname = "gestaoepi_bd";
+                                    //Criar a conexao
+                                    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                    if (!$conn) {
+                                        die("<script>
+                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
+                                    } else {
+                                        //echo "Conexao realizada com sucesso";
+                                    }
+
+                                    $selectDepartamentos = "SELECT * FROM `epis`";
+                                    $result = mysqli_query($conn, $selectDepartamentos);
+
+                                    while ($rowDepartamentos = mysqli_fetch_assoc($result)) { ?>
+                                        <option value="<?php echo $rowDepartamentos['codCadastro']; ?>"><?php echo $rowDepartamentos['nomeEPI']; ?>
+                                        </option><?php
+
+                                                }
+                                                    ?>
+                                </datalist>
                             </div>
                         </div>
                     </div>
@@ -92,36 +128,61 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Código do Lote:</label>
-                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o código do lote">
+                            <input class="form-control" list="codLote" name="codLote" aria-describedby="emailHelp" placeholder="Insira o código do lote">
+                            <datalist id="codLote" name="codLote">
+                                <?php
+                                $servidor = "localhost";
+                                $usuario = "root";
+                                $senha = "";
+                                $dbname = "gestaoepi_bd";
+                                //Criar a conexao
+                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                if (!$conn) {
+                                    die("<script>
+    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
+                                } else {
+                                    //echo "Conexao realizada com sucesso";
+                                }
+
+                                $selectDepartamentos = "SELECT * FROM `lotes`";
+                                $result = mysqli_query($conn, $selectDepartamentos);
+
+                                while ($rowDepartamentos = mysqli_fetch_assoc($result)) { ?>
+                                    <option value="<?php echo $rowDepartamentos['codLote']; ?>">
+                                    </option><?php
+
+                                            }
+                                                ?>
                         </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Nome do Fornecedor:</label>
-                            <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o nome do fornecedor">
+                            <input type="text" class="form-control" id="nomeFornecedor" name="nomeFornecedor" aria-describedby="emailHelp" placeholder="Insira o nome do fornecedor">
                         </div>
                     </div>
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Data de Validade:</label>
-                            <input type="date" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira a data de validade">
+                            <input type="date" class="form-control" id="dataValidade" name="dataValidade" aria-describedby="emailHelp" placeholder="Insira a data de validade">
                         </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Data de recebimento:</label>
-                            <input type="date" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira a data de recebimento">
+                            <input type="date" class="form-control" id="dataRecebimento" name="dataRecebimento" aria-describedby="emailHelp" placeholder="Insira a data de recebimento">
                         </div>
                     </div>
 
 
-                        <div class="row justify-content-center text-left">
+                    <div class="row justify-content-center text-left">
 
-                            <div class="form-group col-sm-8 flex-column d-flex">
-                                <label>Quantidade:</label>
-                                <input type="number" class="form-control" id="qtnd" aria-describedby="emailHelp" placeholder="Insira a Quantidade">
-                            </div>
-
+                        <div class="form-group col-sm-8 flex-column d-flex">
+                            <label>Quantidade:</label>
+                            <input type="number" class="form-control" id="qntd" name="qntd" aria-describedby="emailHelp" placeholder="Insira a Quantidade">
                         </div>
+
+                    </div>
 
                     <center>
                         <div>
@@ -180,22 +241,25 @@
 
     if (isset($enviar)) {
 
+        $codLote = $_POST['codLote'];
+        $codEPI = $_POST['codCadastro'];
+        $nomeFornecedor = $_POST['nomeFornecedor'];
+        $dataValidade = $_POST['dataValidade'];
+        $dataRecebimento = $_POST['dataRecebimento'];
+        $quantidade = $_POST['qntd'];
 
 
+        $sql = "INSERT INTO `lotes`(`codLote`, `codCadastro`, `nomeFornecedor`, `dataValidade`, `dataRecebimento`, `quantidade`) VALUES 
+        ('$codLote', '$codEPI', '$nomeFornecedor', '$dataValidade','$dataRecebimento', '$quantidade')";
 
-
-
-        $sql = "INSERT INTO `empregados`(`registroEmpresa`, `nomeEmpregado`, `cpf`, `rg`, `dtNasc`, `endereco`, `cidade`, `bairro`, `complemento`, `codEmpresa`, `codDepartamento`, `codCargo`, `descCargo`, `codGHE`) VALUES 
-        ('$registroEmpresa', '$nome', 'sha1($cpf)', 'sha1($rg)','$dtNasc', '$endereco', '$cidade', '$bairro', '$complemento', '$codEmpresa', '$codDepartamento', '$codCargo', '$descCargo', '$codGHE')";
-
-        if ($registroEmpresa == null || $nome == null || $cpf == null || $rg == null || $dtNasc == null || $endereco == null || $cidade == null || $bairro == null || $complemento == null || $codEmpresa == null || $codDepartamento == null || $codCargo == null || $codGHE == null || $descCargo == null) {
+        if ($codEPI == null || $codLote == null || $nomeFornecedor == null || $dataValidade == null || $dataRecebimento == null || $quantidade == null) {
             echo "<script>
-      alert('Preencha todos campos do formulário.');
-      </script>";
+alert('Preencha todos campos do formulário.');
+</script>";
         } else {
 
 
-            $comparar = "SELECT * FROM `empregados` WHERE (`registroEmpresa` = '" . $registroEmpresa . "') or (`cpf` = '" . sha1($cpf) . "')";
+            $comparar = "SELECT * FROM `lotes` WHERE (`codLote` = '" . $codLote . "')";
 
             $result = mysqli_query($conn, $comparar);
 
@@ -219,13 +283,15 @@
                 mysqli_error($conn);
             }
         }
-        unset($empresa);
-        unset($departamento);
-        unset($codGHE);
-        unset($nomeGHE);
     }
+    unset($empresa);
+    unset($departamento);
+    unset($codGHE);
+    unset($nomeGHE);
+
 
 
     ?>
 </body>
+
 </html>

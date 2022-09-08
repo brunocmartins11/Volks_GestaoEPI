@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-    background-image: url("epi.jpg") no-repeat;
+    background: url(/images/epi.jpg) no-repeat;
     background-size: cover;
     height: 100vh;
 }
@@ -72,7 +72,7 @@
     margin: 35px 280px;
 }
 
-.buttons .btn {
+.buttons button {
     height: 50px;
     width: 150px;
     font-size: 18px;
@@ -84,6 +84,9 @@
     cursor: pointer;
     border-radius: 25px;
     transition: .5s;
+}
+
+.buttons .btn {
     margin-left: 25px;
 }
 

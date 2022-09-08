@@ -14,18 +14,11 @@
 
 
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
     <!-- SCRIPTS -->
@@ -34,6 +27,17 @@
 </head>
 
 <body>
+    <?php
+
+    session_start();
+
+    if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+        header("Location: http://localhost/gestaoepi/codes/login.html");
+        exit;
+    }
+
+
+    ?>
     <header>
         <nav class="navbar navbar-custom " style="height: 75px;">
             <a><img class="logoVW" src="http://localhost/gestaoepi/images/logoVolksW.png"></a>
@@ -57,22 +61,22 @@
             <span>Cadastro de Estoque</span>
         </a>
         <a href="telaLogistica_Busca.php">
-          <i class="fa fa-search"></i>
-          <span>Busca</span>
-      </a>
+            <i class="fa fa-search"></i>
+            <span>Busca</span>
+        </a>
         <a href="telaLogistica_Checagem.php">
-          <i class="fa fa-search"></i>
-          <span>Checagem</span>
-      </a>
-      <a href="telaLogistica_Estoque.php">
-          <i class="fa fa-search"></i>
-          <span>Estoque</span>
-      </a>
+            <i class="fa fa-search"></i>
+            <span>Checagem</span>
+        </a>
+        <a href="telaLogistica_Estoque.php">
+            <i class="fa fa-search"></i>
+            <span>Estoque</span>
+        </a>
         <a href="telaLogistica_Mensagem.php">
-          <i class="fa fa-message"></i>
+            <i class="fa fa-message"></i>
             <span>Mensagem</span>
         </a>
-    </div> 
+    </div>
 
 </body>
 

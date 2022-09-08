@@ -50,7 +50,7 @@
         </nav>
     </header>
 
-   
+
     <input type="checkbox" id="check">
     <label for="check">
         <i class="fa fa-bars" id="btn"></i>
@@ -77,39 +77,115 @@
 
         <div class="container" style="border: 1px solid silver; width: 50%; border-radius: 10px; padding: 25px;">
             <div>
-                <form>
+                <form method="post" action="telaSeguranca_EPI.php">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex">
                             <label>Código de Cadastro</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Código de Cadastro">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
-                                </div>
+                                <input class="form-control" list="codCadastro" name="codCadastro" aria-describedby="emailHelp" />
+                                <datalist id="codCadastro" name="codCadastro">
+                                    <?php
+                                    $servidor = "localhost";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $dbname = "gestaoepi_bd";
+                                    //Criar a conexao
+                                    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                    if (!$conn) {
+                                        die("<script>
+                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
+                                    } else {
+                                        //echo "Conexao realizada com sucesso";
+                                    }
+
+                                    $selectDepartamentos = "SELECT * FROM `epis`";
+                                    $result = mysqli_query($conn, $selectDepartamentos);
+
+                                    while ($rowDepartamentos = mysqli_fetch_assoc($result)) { ?>
+                                        <option value="<?php echo $rowDepartamentos['codCadastro']; ?>"><?php echo $rowDepartamentos['nomeEPI']; ?>
+                                        </option><?php
+
+                                                }
+                                                    ?>
+                                </datalist>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group col-sm-6 flex-column d-flex">
                         <label>Tipo do EPI:</label>
-                        <select class="form-control">
+                        <select id="tipoEPI" name="tipoEPI" class="form-control">
                             <option>Selecione o EPI</option>
-                            <option>Proteção Auditiva</option>
-                            <option>Proteção Respiratória</option>
-                            <option>Proteção Visual</option>
-                            <option>Proteção Facial</option>
+                            <option value="Auditiva">Proteção Auditiva</option>
+                            <option value="Respiratoria">Proteção Respiratória</option>
+                            <option value="Visual">Proteção Visual</option>
+                            <option value-="Facial">Proteção Facial</option>
                         </select>
                     </div>
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Nome do EPI:</label>
-                            <input type="text" class="form-control" id="Nome_do_EPI" aria-describedby="emailHelp" placeholder="Insira o nome do EPI">
+                            <input class="form-control" list="nomeEPI" name="nomeEPI" aria-describedby="emailHelp" />
+                            <datalist id="nomeEPI" name="nomeEPI">
+                                <?php
+                                $servidor = "localhost";
+                                $usuario = "root";
+                                $senha = "";
+                                $dbname = "gestaoepi_bd";
+                                //Criar a conexao
+                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                if (!$conn) {
+                                    die("<script>
+                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
+                                } else {
+                                    //echo "Conexao realizada com sucesso";
+                                }
+
+
+                                $selectDepartamentos = "SELECT * FROM `epis`";
+                                $result = mysqli_query($conn, $selectDepartamentos);
+
+                                while ($rowDepartamentos = mysqli_fetch_assoc($result)) { ?>
+                                    <option value="<?php echo $rowDepartamentos['codCadastro']; ?>"><?php echo $rowDepartamentos['nomeEPI']; ?>
+                                    </option><?php
+
+                                            }
+                                                ?>
+                            </datalist>
                         </div>
 
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label>Código do CA:</label>
-                            <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira o Número de CA">
+                            <input class="form-control" list="codCA" name="codCA" aria-describedby="emailHelp" />
+                            <datalist id="codCA" name="codCA">
+                                <?php
+                                $servidor = "localhost";
+                                $usuario = "root";
+                                $senha = "";
+                                $dbname = "gestaoepi_bd";
+                                //Criar a conexao
+                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+                                if (!$conn) {
+                                    die("<script>
+                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
+                                } else {
+                                    //echo "Conexao realizada com sucesso";
+                                }
+
+                                $selectDepartamentos = "SELECT * FROM `epis`";
+                                $result = mysqli_query($conn, $selectDepartamentos);
+
+                                while ($rowDepartamentos = mysqli_fetch_assoc($result)) { ?>
+                                    <option value="<?php echo $rowDepartamentos['codCA']; ?>"><?php echo $rowDepartamentos['nomeEPI']; ?>
+                                    </option><?php
+
+                                            }
+                                                ?>
+                            </datalist>
                         </div>
                     </div>
 
@@ -124,26 +200,26 @@
 
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label>Frequência:</label>
-                                <select class="form-control">
-                                    <option>Selecione a frequência</option>
-                                    <option>Diária</option>
-                                    <option>Semanal</option>
-                                    <option>Quinzenal</option>
-                                    <option>Mensal</option>
-                                    <option>Anual</option>
+                                <select class="form-control" id="frequencia" name="frequencia">
+                                    <option value="0">Selecione a frequência</option>
+                                    <option value="1">Diária</option>
+                                    <option value="7">Semanal</option>
+                                    <option vakue="15">Quinzenal</option>
+                                    <option value="30">Mensal</option>
+                                    <option value="365">Anual</option>
                                 </select>
                             </div>
 
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label>Quantidade:</label>
-                                <input type="number" class="form-control" id="Codigo_do_EPI" aria-describedby="emailHelp" placeholder="Insira a Quantidade">
+                                <input type="number" class="form-control" id="qntd" name="qntd" aria-describedby="emailHelp" placeholder="Insira a Quantidade">
                             </div>
 
                         </div>
                     </div>
                     <center>
                         <div>
-                            <button type="submit" class="btn btn-outline-primary" style="border-radius: 15px; margin-top: 25px;">Confirmar</button>
+                            <button type="submit" id="confirmar" name="confirmar" class="btn btn-outline-primary" style="border-radius: 15px; margin-top: 25px;">Confirmar</button>
                         </div>
                     </center>
                 </form>
@@ -203,6 +279,80 @@
       </form>
     </div> -->
 
+    <?php
+
+    error_reporting(0);
+
+
+    $servidor = "localhost";
+    $usuario = "root";
+    $senha = "";
+    $dbname = "gestaoepi_bd";
+    //Criar a conexao
+    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+    if (!$conn) {
+        die("<script>
+        alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</script>");
+    } else {
+        //echo "Conexao realizada com sucesso";
+    }
+
+    $enviar = $_POST['confirmar'];
+
+    if (isset($enviar)) {
+
+        $codCadastro = $_POST['codCadastro'];
+        $tipoEPI = $_POST['tipoEPI'];
+        $nomeEPI = $_POST['nomeEPI'];
+        $codCA = $_POST['codCA'];
+        $frequencia = $_POST['frequencia'];
+        $quantidade = $_POST['qntd'];
+
+        if ($frequencia == "0") {
+            echo "<script>
+    alert('Selecione a frequência!');
+    </script>";
+        }
+
+        $sql = "INSERT INTO `epis`(`codCadastro`, `tipoEPI`, `nomeEPI`, `codCA`, `frequencia`, `quantidade`) VALUES 
+        ('$codCadastro', '$tipoEPI', '$nomeEPI', '$codCA','$frequencia', '$quantidade')";
+
+        if ($codCadastro == null || $tipoEPI == null || $nomeEPI == null || $codCA == null || $frequencia == null || $quantidade == null) {
+            echo "<script>
+alert('Preencha todos campos do formulário.');
+</script>";
+        } else {
+
+
+
+            $comparar = "SELECT * FROM `epis` WHERE (`codCadastro` = '" . $codCadastro . "') or (`nomeEPI` = '" . $nomeEPi . "') or (`codCA` = '" . $codCA . "')";
+
+            $result = mysqli_query($conn, $comparar);
+
+            if (mysqli_num_rows($result) >= 1) {
+
+                echo "<script>
+    alert('Este EPI já existe!');
+    </script>";
+                mysqli_error($conn);
+            } else {
+                if (mysqli_query($conn, $sql)) {
+                    echo "<script>
+        alert('EPI cadastrado com Sucesso!');
+        </script>";
+                    mysqli_free_result($result);
+                } else {
+                    echo "<script>
+        alert('EPI não foi cadastrado');
+        </script>";
+                }
+                mysqli_error($conn);
+            }
+        }
+    }
+
+    ?>
 </body>
 
 </html>

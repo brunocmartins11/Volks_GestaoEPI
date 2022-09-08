@@ -291,8 +291,18 @@
 
     </center>
 
-    <a><button class="floating-right-bottom-btn" data-toggle="modal" data-target="#exampleModalCenter">
-            <i class="fa fa-circle-question meu-float"></i>
+    <a style="position:absolute; right:0; bottom:0"><button style="position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #1b1b1b;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    font-size: 35px;" data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fa fa-circle-question" style="margin-top:10px"></i>
         </button></a>
 
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -314,6 +324,7 @@
             </div>
         </div>
     </div>
+    
     <?php
     error_reporting(0);
 
