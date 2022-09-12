@@ -6,7 +6,7 @@
 }
 
 
-/* 
+
 .acimadetudo {
     z-index: 1000;
     position: absolute;
@@ -27,7 +27,7 @@
 
 .carousel-indicators li.active {
     background-color: #14639e;
-} */
+}
 
 textarea {
     resize: none;
