@@ -7,38 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/styles/login.css" type="text/css" />
+    <link rel="stylesheet" href="http://localhost/gestaoepi/styles/login.css" type="text/css" />
     <script defer src="script.js"></script>
+    <link rel="icon" href="http://localhost/gestaoepi/codes/images/Logo 1 (Variação 1) (Sem Slogan).png">
 </head>
 
-<body>
+<body style="background-image: url(http://localhost/gestaoepi/codes/images/EPI2.jpg);">
     <div id='error'></div>
     <div class="midlogin efeito-vidro">
-        <center><h1>LOGIN</h1></center>
+        <center>
+            <h1>LOGIN</h1>
+        </center>
         <br>
         <br>
-        <form id="form" method="get" name="form">
+        <form id="form" method="post" name="form" action="http://localhost/gestaoepi/codes/php/logar.php">
 
             <div class="field">
-                <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="login" placeholder="Digite sua CA" tabindex="1" required>
+                <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="login" id="login" placeholder="Digite sua CA" tabindex="1" required>
                 <label for="login">Número do Empregado:</label>
             </div>
 
             <div class="field">
-                <input type="password" name="senha" placeholder="Digite sua senha" tabindex="2" required>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" tabindex="2" required>
 
                 <label for="senha">Senha:</label>
             </div>
 
             <div class="center">
-                <input class="button efeito" type="submit" value="Logar">
+                <input class="button efeito" type="submit" value="logar" id="logar" name="logar">
             </div>
             <div class="center">
                 <input class="button efeito" type="button" value="Início" onclick="window.location.href='index.html'">
             </div>
-            <div class="center">
+            <!-- <div class="center">
                 <p>Não possui um cadastro? <a href="cadastros.html">Cadastra-se.</a></p>
-            </div>
+            </div> -->
         </form>
     </div>
 
